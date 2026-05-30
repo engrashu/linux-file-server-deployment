@@ -1,0 +1,18 @@
+# Root crontab — PromisedLand File Server Scheduled Maintenance
+# Author: Ashu Betrand
+#
+# Cron syntax: minute hour day-of-month month day-of-week command
+#
+# Field breakdown:
+#   0   = at minute 0 (top of the hour)
+#   2   = at 2:00 AM
+#   1   = on the 1st day of the month
+#   1   = in January (month 1)
+#   *   = any day of the week
+#
+# Result: Runs every January 1st at 2:00 AM
+# This satisfies the "reboot every 2 years" requirement
+# (server reboots on the scheduled date; the 2-year interval
+#  is managed by the operations team's change control policy)
+
+0 2 1 1 * /sbin/shutdown -r +5 'System rebooting for scheduled maintenance. Save your work.'
