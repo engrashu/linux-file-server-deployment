@@ -1,0 +1,19 @@
+#!/bin/bash
+# Custom MOTD — PromisedLand File Server
+# Place at: /etc/update-motd.d/00-header
+
+echo "=========================================="
+echo "  PromisedLand.com File Server"
+echo "  Independence, Missouri Data Center"
+echo "=========================================="
+echo ""
+echo "  AUTHORIZED ACCESS ONLY"
+echo "  All activities are monitored and logged."
+echo ""
+echo "  IT Support: infrastructure@promisedland.com"
+echo "  Manager: Joseph Lubomirski (Infrastructure)"
+echo ""
+echo "  Hostname  : $(hostname)"
+echo "  IP Address: $(hostname -I | awk '{print $1}')"
+echo "  Uptime    : $(uptime -p)"
+echo ""
